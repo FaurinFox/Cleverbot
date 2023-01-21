@@ -1,11 +1,11 @@
 # Cleverbot
 
-In order to use this package, you must obtain a Cleverbot API key <a href="https://cleverbot.com/api" target="_blank">here</a>.
+In order to use this package, you must obtain a Cleverbot API key [here](https://cleverbot.com/api).
 
 ### Installation
 
 ```shell
-npm install --save @faurinfox/cleverbot
+$ npm install --save @faurinfox/cleverbot
 ```
 
 ### Usage
