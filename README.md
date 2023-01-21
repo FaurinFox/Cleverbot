@@ -18,6 +18,7 @@ This example script will use both async/await as well as .then() methods.
 
 ```javascript
 import Cleverbot from '@faurinfox/cleverbot';
+
 (function() {
     const apiKey = "YOUR_API_KEY";
     const CB = new Cleverbot({
