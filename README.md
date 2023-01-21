@@ -5,7 +5,7 @@ In order to use this package, you must obtain a Cleverbot API key [here](https:/
 ### Installation
 
 ```shell
-$ npm install --save @faurinfox/cleverbot
+npm install --save @faurinfox/cleverbot
 ```
 
 ### Usage
