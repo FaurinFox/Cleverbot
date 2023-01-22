@@ -10,7 +10,7 @@ npm install --save @faurinfox/cleverbot
 
 ### Usage
 
-There are a few ways to use this package. We'll start with a import style.
+There are a few ways to use this package. We'll start with a `import` style, which we recommend using whenever possible.
 
 The example below will be a full script, the other examples after it will be modifications, but not include the entire thing every time.
 
@@ -66,7 +66,7 @@ import Cleverbot from '@faurinfox/cleverbot';
 })();
 ```
 
-The second way is importing it in CommonJS instead.
+Another way is importing it in CommonJS instead, though this import differs from our recommended one.
 
 Note however, that importing this package this way requires the import to be within an async function!
 
@@ -121,6 +121,7 @@ let Cleverbot;
 
 But that shall be the end of CommonJs method guidance. We prefer for you to use the `import Cleverbot from '@faurinfox/cleverbot';`, but we also want you to be able to use our package in CommonJS as well, and as such, we hope at least one of these examples helped you to do so.
 
+### Avoid this
 
 This package _does_ also support callbacks as the third argument to the query function. However, the use of them is **heavily discouraged**, i recommend using any of the previously shown methods instead.
 
@@ -146,7 +147,8 @@ CB.query(inputMsg, {cs: "YOUR_CS_KEY"}, function(response) {
   console.log(response.output)
 });
 ```
-Do note though the these examples are just that, examples. They likely will not run as a standalone file on their own, apart from the first of them. 
+
+Do note though that these examples are just that, examples. Most of them likely will not run as a standalone file on their own. 
 You will need to adapt them to your needs.
 
 #### [Back to top of Readme](#readme).
