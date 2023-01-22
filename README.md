@@ -119,7 +119,7 @@ let Cleverbot;
 // This, however, does mean that you need to wait until Cleverbot variable is assigned before using it
 ```
 
-But that shall be the end of CommonJs method guidance. We prefer for you to use the `import Cleverbot from '@faurinfox/cleverbot';`, but we also want you to be able to use our package in CommonJS as well, and as such, we hope at least one of these examples helped you to do so.
+But that shall be the end of CommonJS method guidance. We prefer for you to use the `import Cleverbot from '@faurinfox/cleverbot';`, but we also want you to be able to use our package in CommonJS as well, and as such, we hope at least one of these examples helped you to do so.
 
 ### Avoid this
 
