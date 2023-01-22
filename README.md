@@ -1,6 +1,6 @@
 # Cleverbot
 
-In order to use this package, you must obtain a Cleverbot API key [here](https://cleverbot.com/api).
+In order to use this package, you need to first obtain a Cleverbot API key [here](https://cleverbot.com/api).
 
 ### Installation
 
@@ -80,19 +80,55 @@ const Cleverbot = (await import('@faurinfox/cleverbot')).default;
 })();
 ```
 
-So far these examples have been using promises to retrieve the value.
+Alternatively, you could also:
 
-This package _does_ also support callbacks as the third argument to the query function. However, the use of them is **heavily discouraged**, i recommend using a promise method instead.
+```javascript
+const apiKey = "YOUR_API_KEY";
+(async function() {
+    return new Promise(async (resolve, reject) => {
+        try {
+            const Clever = (await import('@faurinfox/cleverbot')).default;
+            resolve(new Clever({
+                key: apiKey
+            }));
+        } catch (error) {
+            reject(error);
+        }
+    });
+})().then((c) => {
+    // And carry on the code from there, wrapped in this .then
+  const Cleverbot = c;
+  Cleverbot.query(...).then(...)
+  // ^ Placeholder for your actual query
+}).catch((err) => {
+  console.error(err);
+});
+```
+
+Or you could use _let_ instead of a _const_ to avoid wrapping everything in the .then
+
+```javascript
+const apiKey = "YOUR_API_KEY";
+let Cleverbot;
+(async function() {
+  const Clever = (await import('@faurinfox/cleverbot')).default;
+  Cleverbot = new Clever({
+    key: apiKey
+  });
+})();
+// This, however, does mean that you need to wait until Cleverbot variable is assigned before using it
+```
+
+But that shall be the end of CommonJs method guidance. We prefer for you to use the `import Cleverbot from '@faurinfox/cleverbot';`, but we also want you to be able to use our package in CommonJS as well, and as such, we hope at least one of these examples helped you to do so.
+
+
+This package _does_ also support callbacks as the third argument to the query function. However, the use of them is **heavily discouraged**, i recommend using any of the previously shown methods instead.
 
 Nevertheless, to use it via a callback would be:
 
 ```javascript
 // First import as normal, either like this
 import Cleverbot from '@faurinfox/cleverbot';
-// OR like this, though this must be inside an async function
-const Cleverbot = (await import('@faurinfox/cleverbot')).default;
-// Only one or the other. 
-
 // Once imported, we can send a query without having a 'cs' key to pass to it, using a callback
 const apiKey = "YOUR_API_KEY";
 const CB = new Cleverbot({
