@@ -1,6 +1,6 @@
 {
   "name": "@faurinfox/cleverbot",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Provides a wrapper for the official Cleverbot API",
   "main": "index.mjs",
   "type": "module",
@@ -8,7 +8,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "engines": {
-    "node": "^12.20.0 || >=16.16.0"
+    "node": ">=12.20.0 <18.13.0"
   },
   "repository": {
     "type": "git",
