@@ -10,7 +10,7 @@ npm install --save @faurinfox/cleverbot
 
 ### Usage
 
-There are a few ways to use this package. We'll start with a `import` style, which we recommend using whenever possible.
+There are a few ways to use this package. We'll start with a `import` style, which i recommend using whenever possible.
 
 The example below will be a full script, the other examples after it will be modifications, but not include the entire thing every time.
 
@@ -57,7 +57,6 @@ import Cleverbot from '@faurinfox/cleverbot';
                 example();
             })
             .catch((e) => {
-              // Same thing as above, just log it
                 console.error(e);
             });
         }
@@ -119,7 +118,7 @@ let Cleverbot;
 // This, however, does mean that you need to wait until Cleverbot variable is assigned before using it
 ```
 
-But that shall be the end of CommonJS method guidance. We prefer for you to use the `import Cleverbot from '@faurinfox/cleverbot';`, but we also want you to be able to use our package in CommonJS as well, and as such, we hope at least one of these examples helped you to do so.
+But that shall be the end of CommonJS method guidance. I would prefer for you to use the `import Cleverbot from '@faurinfox/cleverbot';`, but i also want you to be able to use this package in CommonJS as well, and as such, i hope at least one of these examples helped you to do so.
 
 ### Avoid this
 
@@ -128,7 +127,7 @@ This package _does_ also support callbacks as the third argument to the query fu
 Nevertheless, to use it via a callback would be:
 
 ```javascript
-// First import as normal, either like this
+// First import as normal
 import Cleverbot from '@faurinfox/cleverbot';
 // Once imported, we can send a query without having a 'cs' key to pass to it, using a callback
 const apiKey = "YOUR_API_KEY";
