@@ -65,7 +65,7 @@ import Cleverbot from '@faurinfox/cleverbot';
 })();
 ```
 
-Another way is importing it in CommonJS instead, though this import differs from our recommended one.
+Another way is importing it in CommonJS instead, though this import differs from the recommended one.
 
 Note however, that importing this package this way requires the import to be within an async function!
 
@@ -150,4 +150,4 @@ CB.query(inputMsg, {cs: "YOUR_CS_KEY"}, function(response) {
 Do note though that these examples are just that, examples. Most of them likely will not run as a standalone file on their own. 
 You will need to adapt them to your needs.
 
-#### [Back to top of Readme](#readme).
+#### [Back to top](#readme).
