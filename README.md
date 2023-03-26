@@ -8,6 +8,20 @@ In order to use this package, you need to first obtain a Cleverbot API key [here
 npm install --save @faurinfox/cleverbot
 ```
 
+### Highlighted changes
+
+As of version 1.1.0, Cleverbot tweaking parameters have been implemented to this package. These allow you to modify the "mood" of its responses. Cleverbot simply calls these tweaks `tweak1, tweak2, tweak3`. However, i have renamed them for use in this package. Below are these renames in the same order, as well as what they control.  
+
+- wackiness, controls from sensible to wacky
+- talkativeness, controls from shy to talkative
+- attentiveness, controls from self-centered to attentive  
+
+Each of these values must be an integer between 0 and 100. If left undeclared, whatever Cleverbot defaults to will be used.  
+
+Only the first example under Usage section below has been updated to show the use of these tweaks. They will be used in the same object as the `cs` parameter.
+
+If the introduction of these changes broke things for you, please create an issue on the [Github page](https://github.com/FaurinFox/Cleverbot/issues) in order to let me know about them.
+
 ### Usage
 
 There are a few ways to use this package. We'll start with a `import` style, which i recommend using whenever possible.
@@ -35,7 +49,10 @@ import Cleverbot from '@faurinfox/cleverbot';
           // It is not, so continue and pass it to the query
           // This is also demonstrating how to use this with async function and await
             try {
-                let reply = await CB.query(inputMsg, {cs: csStr});
+                // As of v1.1.0, the same object we use to pass cs(Str), can also be
+                // used to set Cleverbot tweaks you wish to use. We will
+                // set all three in the below line, to 70, 50, 50.
+                let reply = await CB.query(inputMsg, {cs: csStr, wackiness: 70, talkativeness: 50, attentiveness: 50});
                 // CB.query here will return a JSON with the reply received from Cleverbot API, as well as an added 'URL' property should you need to know the URL that was called to receive that response
                 // We do not need the entire JSON, only the reply, thus use .output
                 console.log("Reply: "+reply.output);
@@ -65,7 +82,7 @@ import Cleverbot from '@faurinfox/cleverbot';
 })();
 ```
 
-Another way is importing it in CommonJS instead, though this import differs from the recommended one.
+Another way of importing it is in CommonJS instead, though this import differs from the recommended one.
 
 Note however, that importing this package this way requires the import to be within an async function!
 
