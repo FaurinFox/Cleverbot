@@ -20,7 +20,7 @@ Each of these values must be an integer between 0 and 100. If left undeclared, w
 
 Only the first example under Usage section below has been updated to show the use of these tweaks. They will be used in the same object as the `cs` parameter.
 
-If the introduction of these changes broke things for you, please create an issue on the [Github page](https://github.com/FaurinFox/Cleverbot/issues) in order to let me know about them.
+If the introduction of these changes broke things for you, please create an issue on the [GitHub page](https://github.com/FaurinFox/Cleverbot/issues) in order to let me know about them.
 
 ### Usage
 
