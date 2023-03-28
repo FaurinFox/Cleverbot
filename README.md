@@ -52,8 +52,13 @@ import Cleverbot from '@faurinfox/cleverbot';
                 // As of v1.1.0, the same object we use to pass cs(Str), can also be
                 // used to set Cleverbot tweaks you wish to use. We will
                 // set all three in the below line, to 70, 50, 50.
-                let reply = await CB.query(inputMsg, {cs: csStr, wackiness: 70, talkativeness: 50, attentiveness: 50});
-                // CB.query here will return a JSON with the reply received from Cleverbot API, as well as an added 'URL' property should you need to know the URL that was called to receive that response
+                let CbTweaks = {wackiness: 70, talkativeness: 50, attentiveness: 50};
+                // And then use them in the options
+                let reply = await CB.query(inputMsg, {cs: csStr, ...CbTweaks});
+                // We could also just pass them normally as shown below, but its more lengthy, so i prefer the one above instead. 
+                //  let reply = await CB.query(inputMsg, {cs: csStr, wackiness: 70, talkativeness: 50, attentiveness: 50});
+
+                // CB.query used above will return a JSON with the reply received from Cleverbot API, as well as an added 'URL' property should you need to know the URL that was called to receive that response
                 // We do not need the entire JSON, only the reply, thus use .output
                 console.log("Reply: "+reply.output);
                 // If you need the URL that was called, you would get it as such:
