@@ -18,7 +18,8 @@ As of version 1.1.0, Cleverbot tweaking parameters have been implemented to this
 
 Each of these values must be an integer between 0 and 100. If left undeclared, whatever Cleverbot defaults to will be used.  
 
-Only the first example under Usage section below has been updated to show the use of these tweaks. They will be used in the same object as the `cs` parameter.
+Only the first example under Usage section below has been updated to show the use of these tweaks. As of version 1.2.0, these tweaks can be altered with the `setTweak` function. 
+Previously they were used in the same object as the `cs` parameter, but that approach, while still supported, is now discouraged.
 
 If the introduction of these changes broke things for you, please create an issue on the [GitHub page](https://github.com/FaurinFox/Cleverbot/issues) in order to let me know about them.
 
@@ -50,17 +51,21 @@ import Cleverbot from '@faurinfox/cleverbot';
           // This is also demonstrating how to use this with async function and await
             try {
                 // As of v1.1.0, the same object we use to pass cs(Str), can also be
-                // used to set Cleverbot tweaks you wish to use. We will
-                // set all three in the below line, to 70, 50, 50.
+                // used to set Cleverbot tweaks you wish to use.
+                // Below is an example of doing just that:
+                /*
                 let CbTweaks = {wackiness: 70, talkativeness: 50, attentiveness: 50};
-                // And then use them in the options
                 let reply = await CB.query(inputMsg, {cs: csStr, ...CbTweaks});
-                // We could also just pass them normally as shown below, but its more lengthy, so i prefer the one above instead. 
-                //  let reply = await CB.query(inputMsg, {cs: csStr, wackiness: 70, talkativeness: 50, attentiveness: 50});
-                // I may later on make this object approach work the same internally
-                // And keep the option to use it like this
-                // but also create something like CB.setTweak('wacky', 70);
-                // which at the moment doesn't exist but it may later.
+                */
+                // However, as of v1.2.0, the function approach is preferred.
+                // while the object approach introduced in v1.1.0
+                // is still supported, it is now discouraged as the new function one is preferred.
+                CB.setTweak('wackiness', 70);
+                CB.setTweak('talkativeness', 50);
+                CB.setTweak('attentiveness', 50);
+                // Alternatively, there is also
+                // CB.setWackiness(70). Both do the same thing. Similar functions also exist for the other two tweaks.
+                let reply = await CB.query(inputMsg, {cs: csStr});
                 // CB.query used above will return a JSON with the reply received from Cleverbot API, as well as an added 'URL' property should you need to know the URL that was called to receive that response
                 // We do not need the entire JSON, only the reply, thus use .output
                 console.log("Reply: "+reply.output);
