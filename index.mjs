@@ -56,7 +56,7 @@ class Cleverbot {
                     validateTweaks(3, 'attentiveness', value);
                     break;
                 default:
-                    return vars.errors.handler('invalidTweak', value);
+                    return vars.errors.handler('invalidTweak', tweakName);
             }
         }else{
             return vars.errors.handler('optionsObjKeyNotString', 'tweakName');
