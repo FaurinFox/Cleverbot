@@ -1,6 +1,6 @@
 {
   "name": "@faurinfox/cleverbot",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Provides a wrapper/client for the official Cleverbot API",
   "main": "index.mjs",
   "type": "module",
